@@ -1,38 +1,53 @@
 #!/usr/bin/env python3
 """
-Clean MediaWiki Translate wikitext into Aquilla-ready Markdown.
+Clean MediaWiki Translate wikitext into Aquilla-ready CSV and/or Markdown.
 
-Reads *.wikitext from mediawiki/, writes *.md to aquilla/.
-Each Translate unit becomes its own block (blank line between cells).
+Reads *.wikitext from mediawiki/, writes *.csv / *.md to aquilla/.
+Each Translate unit becomes one cell (CSV row or Markdown block).
 Inline markup is limited to TipTap-friendly tags (<i>, <b>, <br>, …).
+
+CSV format (Aquilla bilingual importer):
+  id,source,target
+  Worksheet_Name/1,"<i>Title</i>",
 """
 
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import re
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_INPUT_DIR = REPO_ROOT / "mediawiki"
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "aquilla"
 
-# Tags that may remain inside cell content (Aquilla TipTap allowlist subset we emit).
 INLINE_KEEP = ("i", "b", "strong", "em", "u", "s", "br", "p", "code")
 
-# One Translate unit, including the T: marker.
+# Captures T:N and body.
 TRANSLATE_UNIT = re.compile(
-    r"<translate>\s*<!--T:\d+-->\s*(.*?)</translate>",
+    r"<translate>\s*<!--T:(\d+)-->\s*(.*?)</translate>",
     re.IGNORECASE | re.DOTALL,
 )
+
+
+@dataclass
+class Unit:
+    t_id: int
+    text: str
+    kind: str  # "heading" | "list" | "text"
+    heading_level: int = 0
+    list_depth: int = 0
+    list_ordered: bool = False
 
 
 def strip_page_chrome(text: str) -> str:
     text = re.sub(r"__NOTOC__", "", text)
     text = re.sub(r"<sidebar>.*?</sidebar>", "", text, flags=re.IGNORECASE | re.DOTALL)
     text = re.sub(r"<languages\s*/?>", "", text, flags=re.IGNORECASE)
-    # Zero-width spaces sometimes appear around headings in copied wikitext
     text = text.replace("\u200b", "")
     return text
 
@@ -49,12 +64,10 @@ def strip_footer_templates(text: str) -> str:
 
 
 def strip_file_links(text: str) -> str:
-    """Drop embedded MediaWiki images (not useful as Aquilla cells)."""
     return re.sub(r"\[\[File:[^\]]+\]\]", "", text, flags=re.IGNORECASE)
 
 
 def unwrap_bold_around_italic_templates(text: str) -> str:
-    """<span><b>{{Italic|…}}</b></span> → {{Italic|…}} (title lines)."""
     text = re.sub(
         r"<span\b[^>]*>\s*<b>\s*(\{\{Translatable template\|Italic\|.*?\}\})\s*</b>\s*</span>",
         r"\1",
@@ -70,134 +83,6 @@ def unwrap_bold_around_italic_templates(text: str) -> str:
     return text
 
 
-def _strip_all_tags(content: str) -> str:
-    return re.sub(r"<[^>]+>", "", content).strip()
-
-
-def _clean_unit_body(content: str) -> str:
-    """Normalize text inside one Translate unit (keep TipTap-safe inline tags)."""
-    content = content.strip()
-    # Soft line breaks inside a unit → <br/>; collapse other internal newlines to spaces
-    content = re.sub(r"<br\s*/?>\s*", "<br/>", content, flags=re.IGNORECASE)
-    parts = re.split(r"(<br/>)", content)
-    normalized: list[str] = []
-    for part in parts:
-        if part == "<br/>":
-            normalized.append(part)
-        else:
-            normalized.append(re.sub(r"\s*\n\s*", " ", part).strip())
-    content = "".join(normalized)
-    content = re.sub(r"[ \t]{2,}", " ", content)
-    return content.strip()
-
-
-def _block(content: str) -> str:
-    """Emit one Aquilla cell as its own paragraph block."""
-    content = content.strip()
-    if not content:
-        return ""
-    return f"\n\n{content}\n\n"
-
-
-def convert_heading_units(text: str) -> str:
-    """== <translate>Title</translate> == → ## Title (own cell)."""
-
-    def replacer(match: re.Match[str]) -> str:
-        level = len(match.group(1))
-        title = _clean_unit_body(match.group(2))
-        return _block(f"{'#' * level} {title}")
-
-    return re.sub(
-        r"^(={2,6})\s*" + TRANSLATE_UNIT.pattern + r"\s*\1\s*$",
-        replacer,
-        text,
-        flags=re.MULTILINE | re.IGNORECASE | re.DOTALL,
-    )
-
-
-def convert_italic_template_units(text: str) -> str:
-    """{{Translatable template|Italic|<translate>…</translate>}} → <i>…</i>."""
-
-    def replacer(match: re.Match[str]) -> str:
-        # Body may still contain a translate unit, or already-unwrapped / broken markup
-        inner = match.group(1)
-        unit = TRANSLATE_UNIT.search(inner)
-        if unit:
-            body = _clean_unit_body(unit.group(1))
-        else:
-            body = _strip_all_tags(inner)
-        return _block(f"<i>{body}</i>")
-
-    return re.sub(
-        r"\{\{Translatable template\|Italic\|(.*?)\}\}",
-        replacer,
-        text,
-        flags=re.DOTALL,
-    )
-
-
-def convert_list_units(text: str) -> str:
-    """* / # / ; / : lines that wrap a translate unit → markdown / plain cells."""
-
-    def bullet(match: re.Match[str]) -> str:
-        depth = len(match.group(1))
-        body = _clean_unit_body(match.group(2))
-        return _block(f"{'  ' * (depth - 1)}- {body}")
-
-    def numbered(match: re.Match[str]) -> str:
-        depth = len(match.group(1))
-        body = _clean_unit_body(match.group(2))
-        return _block(f"{'  ' * (depth - 1)}1. {body}")
-
-    def definition(match: re.Match[str]) -> str:
-        body = _clean_unit_body(match.group(1))
-        return _block(body)
-
-    text = re.sub(
-        r"^(\*+)\s*" + TRANSLATE_UNIT.pattern + r"\s*$",
-        bullet,
-        text,
-        flags=re.MULTILINE | re.IGNORECASE | re.DOTALL,
-    )
-    text = re.sub(
-        r"^(#+)\s*" + TRANSLATE_UNIT.pattern + r"\s*$",
-        numbered,
-        text,
-        flags=re.MULTILINE | re.IGNORECASE | re.DOTALL,
-    )
-    # Definition term / description (; and :) — each unit is its own cell
-    text = re.sub(
-        r"^[;:]\s*" + TRANSLATE_UNIT.pattern + r"\s*$",
-        definition,
-        text,
-        flags=re.MULTILINE | re.IGNORECASE | re.DOTALL,
-    )
-    return text
-
-
-def convert_remaining_translate_units(text: str) -> str:
-    """Any leftover <translate>…</translate> → its own cell (preserve <b>/<i> wrappers)."""
-
-    # <b><translate>…</translate></b> or <i>…</i>
-    def wrapped(match: re.Match[str]) -> str:
-        tag = match.group(1).lower()
-        body = _clean_unit_body(match.group(2))
-        return _block(f"<{tag}>{body}</{tag}>")
-
-    text = re.sub(
-        r"<(b|strong|i|em)>\s*" + TRANSLATE_UNIT.pattern + r"\s*</\1>",
-        wrapped,
-        text,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-
-    def bare(match: re.Match[str]) -> str:
-        return _block(_clean_unit_body(match.group(1)))
-
-    text = re.sub(TRANSLATE_UNIT, bare, text)
-    return text
-
-
 def convert_wiki_links(text: str) -> str:
     text = re.sub(r"\[\[([^|\]]+)\|([^\]]+)\]\]", r"\2", text)
     text = re.sub(
@@ -206,35 +91,6 @@ def convert_wiki_links(text: str) -> str:
         text,
     )
     return text
-
-
-def unwrap_style_containers(text: str) -> str:
-    text = re.sub(r"<span\b[^>]*>", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"</span>", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"<div\b[^>]*>", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"</div>", "", text, flags=re.IGNORECASE)
-    # Tables: drop structure, keep any text already extracted as units
-    text = re.sub(r"</?(?:table|tr|td|th)\b[^>]*>", "", text, flags=re.IGNORECASE)
-    return text
-
-
-def convert_leftover_wiki_lists(text: str) -> str:
-    """Handle * / ; / : lines that are not Translate-wrapped (rare)."""
-    lines: list[str] = []
-    for line in text.splitlines():
-        if re.match(r"^:+\s+\S", line):
-            line = re.sub(r"^:+\s*", "", line)
-            lines.append(_block(line).strip("\n"))
-        elif re.match(r"^\*+\s+\S", line):
-            depth = len(re.match(r"^\*+", line).group(0))
-            item = re.sub(r"^\*+\s*", "", line)
-            lines.append(_block(f"{'  ' * (depth - 1)}- {item}").strip("\n"))
-        elif re.match(r"^;+\s+\S", line):
-            lines.append(_block(re.sub(r"^;+\s*", "", line)).strip("\n"))
-        else:
-            # Do not touch markdown headings (## …) or already-converted cells
-            lines.append(line)
-    return "\n".join(lines)
 
 
 def keep_only_tiptap_tags(text: str) -> str:
@@ -248,72 +104,158 @@ def keep_only_tiptap_tags(text: str) -> str:
     return text
 
 
-def normalize_cells(text: str) -> str:
-    """
-    Final pass: one non-empty line (or soft-broken unit) per cell,
-    always separated by a blank line.
-    """
-    chunks = re.split(r"\n\s*\n", text)
-    cells: list[str] = []
-    orphan_tag = re.compile(r"^</?[a-zA-Z][\w:-]*\s*/?>$", re.IGNORECASE)
-
-    for chunk in chunks:
-        chunk = chunk.strip()
-        if not chunk or orphan_tag.match(chunk):
-            continue
-        if "\n" in chunk and "<br/>" not in chunk:
-            for line in chunk.splitlines():
-                line = line.strip()
-                if line and not orphan_tag.match(line):
-                    cells.append(line)
+def _clean_unit_body(content: str) -> str:
+    content = content.strip()
+    content = re.sub(r"<br\s*/?>\s*", "<br/>", content, flags=re.IGNORECASE)
+    parts = re.split(r"(<br/>)", content)
+    normalized: list[str] = []
+    for part in parts:
+        if part == "<br/>":
+            normalized.append(part)
         else:
-            cells.append(re.sub(r"\s*\n\s*", " ", chunk).strip())
-
-    return "\n\n".join(cells) + "\n"
-
-
-def warn_leftovers(text: str, source: Path) -> None:
-    patterns = [
-        (r"<translate\b", "unconverted <translate>"),
-        (r"<!--T:\d+-->", "leftover T: marker"),
-        (r"\{\{", "unconverted {{template}}"),
-        (r"\[\[", "unconverted [[wikilink]]"),
-        (r"__\w+__", "magic word"),
-        (r"</?(?:table|tr|td|span|div)\b", "leftover structural HTML"),
-    ]
-    for pattern, label in patterns:
-        if re.search(pattern, text, flags=re.IGNORECASE):
-            print(f"  warning ({source.name}): {label}", file=sys.stderr)
+            normalized.append(re.sub(r"\s*\n\s*", " ", part).strip())
+    content = "".join(normalized)
+    content = re.sub(r"[ \t]{2,}", " ", content)
+    content = convert_wiki_links(content)
+    content = keep_only_tiptap_tags(content)
+    return content.strip()
 
 
-def clean_wikitext(text: str) -> str:
+def _line_prefix_before(text: str, pos: int) -> str:
+    """Return text from start of the line containing pos up to pos."""
+    line_start = text.rfind("\n", 0, pos) + 1
+    return text[line_start:pos]
+
+
+def _classify_and_build(text: str, match: re.Match[str]) -> Unit:
+    t_id = int(match.group(1))
+    body = _clean_unit_body(match.group(2))
+    start, end = match.start(), match.end()
+    before = text[:start]
+    after = text[end:]
+    line_prefix = _line_prefix_before(text, start).rstrip()
+
+    # {{Translatable template|Italic|…}} (allow junk tags between | and <translate>
+    # and stray closers before }} from broken nestings like Colored Lenses T:1)
+    italic_open = re.search(
+        r"\{\{Translatable template\|Italic\|(?:(?!\{\{).)*$",
+        before,
+        flags=re.DOTALL,
+    )
+    if italic_open and re.match(
+        r"^(?:\s*</(?:b|strong|i|em|span)>)*\s*\}\}",
+        after,
+        flags=re.IGNORECASE,
+    ):
+        plain = re.sub(r"<[^>]+>", "", body).strip()
+        return Unit(t_id=t_id, text=f"<i>{plain}</i>", kind="text")
+
+    # == Title == / === Title ===
+    heading_prefix = re.search(r"(={2,6})\s*$", line_prefix)
+    if heading_prefix:
+        marks = heading_prefix.group(1)
+        if re.match(rf"^\s*{re.escape(marks)}", after):
+            return Unit(
+                t_id=t_id,
+                text=body,
+                kind="heading",
+                heading_level=len(marks),
+            )
+
+    # Unordered / ordered wiki lists
+    list_match = re.fullmatch(r"(\*+|#+)\s*", line_prefix)
+    if list_match:
+        markers = list_match.group(1)
+        return Unit(
+            t_id=t_id,
+            text=body,
+            kind="list",
+            list_depth=len(markers),
+            list_ordered=markers.startswith("#"),
+        )
+
+    # Definition term / indent (; or :)
+    if re.fullmatch(r"[;:]\s*", line_prefix):
+        return Unit(t_id=t_id, text=body, kind="text")
+
+    # <b>/<i>/… wrappers around the unit
+    wrap = re.search(r"<(b|strong|i|em)>\s*$", before, flags=re.IGNORECASE)
+    if wrap:
+        tag = wrap.group(1).lower()
+        if re.match(rf"^\s*</{tag}>", after, flags=re.IGNORECASE):
+            return Unit(t_id=t_id, text=f"<{tag}>{body}</{tag}>", kind="text")
+
+    return Unit(t_id=t_id, text=body, kind="text")
+
+
+def extract_units(text: str) -> list[Unit]:
     text = strip_page_chrome(text)
     text = strip_footer_templates(text)
     text = strip_file_links(text)
     text = unwrap_bold_around_italic_templates(text)
 
-    # Structural units first (each emits its own blank-line-separated block)
-    text = convert_heading_units(text)
-    text = convert_italic_template_units(text)
-    text = convert_list_units(text)
-    text = convert_remaining_translate_units(text)
-
-    text = unwrap_style_containers(text)
-    text = convert_leftover_wiki_lists(text)
-    text = convert_wiki_links(text)
-    text = keep_only_tiptap_tags(text)
-    text = normalize_cells(text)
-    return text
+    units: list[Unit] = []
+    for match in TRANSLATE_UNIT.finditer(text):
+        unit = _classify_and_build(text, match)
+        if unit.text:
+            units.append(unit)
+    return units
 
 
-def process_file(src: Path, dest: Path) -> None:
+def render_markdown(units: list[Unit]) -> str:
+    blocks: list[str] = []
+    for unit in units:
+        if unit.kind == "heading":
+            level = unit.heading_level or 2
+            blocks.append(f"{'#' * level} {unit.text}")
+        elif unit.kind == "list":
+            depth = max(unit.list_depth, 1)
+            indent = "  " * (depth - 1)
+            marker = "1." if unit.list_ordered else "-"
+            blocks.append(f"{indent}{marker} {unit.text}")
+        else:
+            blocks.append(unit.text)
+    return "\n\n".join(blocks) + "\n"
+
+
+def render_csv(stem: str, units: list[Unit]) -> str:
+    buf = io.StringIO()
+    writer = csv.writer(buf, lineterminator="\n")
+    writer.writerow(["id", "source", "target"])
+    for unit in units:
+        writer.writerow([f"{stem}/{unit.t_id}", unit.text, ""])
+    return buf.getvalue()
+
+
+def warn_unconverted(text: str, source: Path, units: list[Unit]) -> None:
+    raw = strip_file_links(
+        unwrap_bold_around_italic_templates(
+            strip_footer_templates(strip_page_chrome(text))
+        )
+    )
+    all_ids = {int(m.group(1)) for m in TRANSLATE_UNIT.finditer(raw)}
+    extracted_ids = {u.t_id for u in units}
+    missing = sorted(all_ids - extracted_ids)
+    if missing:
+        print(f"  warning ({source.name}): missing T: ids {missing}", file=sys.stderr)
+
+
+def process_file(src: Path, output_dir: Path, fmt: str) -> None:
     raw = src.read_text(encoding="utf-8")
-    cleaned = clean_wikitext(raw)
-    warn_leftovers(cleaned, src)
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(cleaned, encoding="utf-8")
-    cells = [c for c in cleaned.split("\n\n") if c.strip()]
-    print(f"wrote {dest.relative_to(REPO_ROOT)} ({len(cells)} cells)")
+    units = extract_units(raw)
+    warn_unconverted(raw, src, units)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    stem = src.stem
+
+    if fmt in ("md", "both"):
+        dest = output_dir / f"{stem}.md"
+        dest.write_text(render_markdown(units), encoding="utf-8")
+        print(f"wrote {dest.relative_to(REPO_ROOT)} ({len(units)} cells)")
+
+    if fmt in ("csv", "both"):
+        dest = output_dir / f"{stem}.csv"
+        dest.write_text(render_csv(stem, units), encoding="utf-8")
+        print(f"wrote {dest.relative_to(REPO_ROOT)} ({len(units)} rows)")
 
 
 def main() -> int:
@@ -338,6 +280,13 @@ def main() -> int:
         default=DEFAULT_OUTPUT_DIR,
         help=f"Output directory (default: {DEFAULT_OUTPUT_DIR})",
     )
+    parser.add_argument(
+        "-f",
+        "--format",
+        choices=("md", "csv", "both"),
+        default="both",
+        help="Output format (default: both)",
+    )
     args = parser.parse_args()
 
     sources = args.files or sorted(args.input_dir.glob("*.wikitext"))
@@ -350,8 +299,7 @@ def main() -> int:
         if not src.exists():
             print(f"missing: {src}", file=sys.stderr)
             return 1
-        dest = args.output_dir / f"{src.stem}.md"
-        process_file(src, dest)
+        process_file(src, args.output_dir, args.format)
 
     return 0
 

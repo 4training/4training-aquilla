@@ -1,4 +1,6 @@
-<i>Seeing reality clearly</i>
+# Getting Rid of Colored Lenses
+
+Seeing reality clearly
 
 Each one of us sees the world through his own eyes. The reality is the same, but everyone sees different details and interprets them differently. That’s how our personal view of the world develops. Our view is shaped by our family, culture, and by the things we have experienced. This can cause us to be one-sided in our perception and not even take notice of some aspects of the situation around us. Information can not get through to us, even if it is important. Then we often make incorrect conclusions that may be harmful to us or the people around us.
 
@@ -26,28 +28,28 @@ Use the support of a good helper! If you feel pressured or somehow uncomfortable
 
 ### Step 1: Asking God
 
-<i>God, through which glasses am I seeing You?</i>
+God, through which glasses am I seeing You?
 
-<i>Holy Spirit, when did I first put on these glasses?</i>
+Holy Spirit, when did I first put on these glasses?
 
 Let God show you what happened. If another person was involved: Forgive that person for what they did and for negatively influencing your view (see the worksheet “Forgiving Step by Step” for more details).
 
 ### Step 2: Repenting
 
-<i>God, I’m sorry for wearing these glasses for such a long time. Please forgive me.</i>
+God, I’m sorry for wearing these glasses for such a long time. Please forgive me.
 
 If you’re ready to remove these glasses you can continue:
 
 ### Step 3: Removing the glasses and receiving God’s view
 
-<i>God, I remove these glasses and hand them over to You. What do You give me in exchange?</i>
+God, I remove these glasses and hand them over to You. What do You give me in exchange?
 
 Say to Him that you take what He is giving you. Thank God for this new view and ask the Holy Spirit to help you to use this view.
 
-<i>God, I thank You that I now have this new view, and I pray that I can maintain and use this view.</i>
+God, I thank You that I now have this new view, and I pray that I can maintain and use this view.
 
 You can ask God about specific topics whether you see them through colored lenses. Start with the following question:
 
-<i>Holy Spirit, through which glasses do I see ... ?</i>
+Holy Spirit, through which glasses do I see ... ?
 
 Suggestions: relationships; life; myself; my gifts; finances; friendships; church

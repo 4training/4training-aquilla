@@ -1,3 +1,5 @@
+# Overcoming Pride and Rebellion
+
 “I want to do what I want!” “I know best!” “I can do it my way!” Does that sound familiar to you?
 
 We’ve probably all experienced it: pride, the misuse of power, and people’s rebellion against God has caused damage in our lives and in the world around us. God wants us to live differently. He sent Jesus to model a life without being proud or rebellious, restoring people and leading them to see who they are.
@@ -6,7 +8,7 @@ If we overrate ourselves we allow ourselves be deceived. We so easily forget tha
 
 ## Arrogance and pride
 
-<i>For all those who exalt themselves will be humbled, and those who humble themselves will be exalted. (Luke 18:14)</i>
+For all those who exalt themselves will be humbled, and those who humble themselves will be exalted. (Luke 18:14)
 
 Arrogance starts in my heart – I believe that I’m better than others. The more I give room to this conviction, the bigger the consequences for me and the people around me: I don’t want to see my mistakes and I can’t ask forgiveness. I treat others unjustly or inconsiderately because I don’t take them seriously or maybe even look down on them. I don’t want to ask others for help or for advice and become unteachable. The result is that I disconnect more and more from reality and live in my own world.
 
@@ -18,9 +20,9 @@ God gave us gifts and abilities so that we use them to do good. He wants to help
 
 ### Application
 
-<i>God, where do you see arrogance or pride in my heart?</i>
+God, where do you see arrogance or pride in my heart?
 
-<i>Ask Him for forgiveness for what He showed you. Ask Him now: What should I think and do instead?</i>
+Ask Him for forgiveness for what He showed you. Ask Him now: What should I think and do instead?
 
 ## Rebellion
 
@@ -48,16 +50,16 @@ God is the righteous judge and He will bring justice. He will judge those who mi
 
 Ask:
 
-<i>God, who did I rebel against?</i>
+God, who did I rebel against?
 
 Go through different relationships: Government (including traffic and tax rules) and officials, parents (also stepparents or guardian), spouse, leaders, teachers, trainers, employers, God
 
-<i>How did that rebellion come into my life?</i>
+How did that rebellion come into my life?
 
 Forgive: Let a good helper support you in forgiving those who hurt you (see worksheet “Forgiving Step by Step”).
 
 Repent: Ask God for forgiveness. Ask the Holy Spirit to help you and change your heart.
 
-<i>How do You want me to move forward and make it right?</i>
+How do You want me to move forward and make it right?
 
 Write down your next steps:

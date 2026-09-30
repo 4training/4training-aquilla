@@ -1,4 +1,6 @@
-<i>Leading Others in a Conversation with God</i>
+# The Role of a Helper in Prayer
+
+Leading Others in a Conversation with God
 
 When we’re hurt or carrying burdens from our past with us, this affects our relationship with God. Often we’re not aware of how these things are linked together – we only sense that we’re sometimes stuck, that our thoughts are often negative, or that we fall again and again into the same sin. To get to the root of our problem, it is very helpful to have support from someone with the right experience and a clear “outside” perspective. They can lead us so that we ask God the right questions and take the necessary steps to becoming free.
 
@@ -12,13 +14,13 @@ God wants to heal and deliver people. As a helper, it is our responsibility to l
 
 ## The relationship with God is key
 
-<b>God</b>
+God
 
-<b>You (helper)</b>
+You (helper)
 
-<b>Other person</b>
+Other person
 
-<b>The main aim of every prayer time is to strengthen the relationship between the other person and God.</b>
+The main aim of every prayer time is to strengthen the relationship between the other person and God.
 
 That’s why it’s shown as the strongest in the diagram. We always trust that God wants to speak with them and assume that they can hear God’s voice. Together with Him we lead them in identifying obstacles and removing them.
 
@@ -78,14 +80,14 @@ The first step is always to have a prayer time for yourself where you let someon
 
 ## My next steps
 
-<i>Ask God: Which issues do I still have in the area of inner healing?</i>
+Ask God: Which issues do I still have in the area of inner healing?
 
 Leading people into freedom and healing is based on several basic principles and processes. They are broken down into pieces and explained in the worksheets: “Forgiving Step by Step”, “Confessing Sins and Repenting”, “Overcoming Fear and Anger” etc. It is important to learn each piece until you are comfortable with it, and then you can practice linking them together.
 
-<i>How experienced are you with these individual principles in your own life and with others?</i>
+How experienced are you with these individual principles in your own life and with others?
 
 Read through the paragraphs “Principles for a prayer time” and “Honoring the other person”.
 
-<i>Which of the points are especially challenging for you? Ask your trainer for his perspective and talk together: How can you grow in these areas?</i>
+Which of the points are especially challenging for you? Ask your trainer for his perspective and talk together: How can you grow in these areas?
 
-<i>Sit down with your trainer and develop a training plan for yourself!</i>
+Sit down with your trainer and develop a training plan for yourself!

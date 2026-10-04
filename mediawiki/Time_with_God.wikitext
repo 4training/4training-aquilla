@@ -1,0 +1,77 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar>
+<languages/>
+<translate>
+<!--T:1-->
+If we want to know a person, we need to have regular contact with them. It’s the same in our relationship with God: To get to know Him better, we need to make the time to spend with Him.
+</translate>
+
+== <translate><!--T:3--> The purpose of our time with God</translate> ==
+* <translate><!--T:35--> <b>To worship God:</b> God is worthy of our praise and deserves our time.</translate>
+* <translate><!--T:36--> <b>To talk with God:</b> In prayer, we share with Him what is on our hearts. We listen to Him so that He can speak to us and lead us.</translate>
+* <translate><!--T:37--> <b>To learn from God:</b> God wants to teach us through His Word, the Bible, and His Spirit. This is like spiritual food for us so that we can grow.</translate>
+
+== <translate><!--T:4--> Examples from the Bible</translate> ==
+{{Translatable template|Italic|<translate><!--T:27--> Look up the following Bible verses and fill out the table: Which person is it talking about? When, where and how exactly does this person spend time with God?</translate>}}
+{| class="wikitable" style="width:100%"
+|-
+! scope="col"| <translate><!--T:5-->
+Verse</translate>
+! scope="col" style="width:20%"| <translate><!--T:6-->
+Person</translate>
+! scope="col" style="width:20%"| <translate><!--T:7-->
+Time</translate>
+! scope="col" style="width:20%"| <translate><!--T:8-->
+Place</translate>
+! scope="col" style="width:25%"| <translate><!--T:9-->
+What exactly?</translate>
+|-
+| <translate><!--T:10-->
+Psalms 5:3</translate>
+| style="text-align:center" | <translate><!--T:28--> David</translate>
+| style="text-align:center" | <translate><!--T:29--> in the morning</translate>
+| style="text-align:center" | <translate><!--T:30--> ?</translate>
+| style="text-align:center" | <translate><!--T:31--> praying and waiting for answer</translate>
+|-
+| <translate><!--T:11-->
+Daniel 6:11</translate> || || || || 
+|-
+| <translate><!--T:12-->
+Mark 1:35</translate> || || || || 
+|-
+| <translate><!--T:13-->
+Luke 6:12</translate> || || || || 
+|-
+| <translate><!--T:14-->
+Acts 10:9</translate> || || || || 
+|-
+| <translate><!--T:15-->
+Acts 16:25</translate> || || || || 
+|}
+
+== <translate><!--T:16-->
+Tools and suggestions for our time with God</translate> == 
+* <translate><!--T:22-->
+<b>Bible:</b> Read a passage from the Bible and then think and pray about it. You can use the head-heart-hands questions for this:</translate><br/><table><tr><td>[[File:Head-32.png]]</td><td><translate><!--T:32--> <b>Head:</b> What do I learn here?</translate></td></tr><tr><td>[[File:Heart-32.png]]</td><td><translate><!--T:33--> <b>Heart:</b> What touches my heart?</translate></td></tr><tr><td>[[File:Hands-32.png]]</td><td><translate><!--T:34--> <b>Hands:</b> How can I apply this?</translate></td></tr></table>
+* <translate><!--T:23-->
+<b>Place:</b> Choose a place where you can meet with God without being distracted.</translate>
+* <translate><!--T:24-->
+<b>Time:</b> Find the best time when you can consistently meet with God.</translate>
+* <translate><!--T:25-->
+<b>Plan:</b> Choose a Bible book to read through. For the beginning, read Luke and Acts (in the New Testament).</translate>
+* <translate><!--T:26-->
+<b>Making notes and sharing:</b> Write down or share with your friends your thoughts, what you feel God is saying to you, your questions, the prayer requests of you or your friends, how God answered prayer, encouraging verses, …</translate>
+
+== <translate><!--T:17--> My commitment for my time with God</translate> ==
+<translate><!--T:38--> Time:</translate>
+----
+<translate><!--T:39--> Place:</translate>
+----
+<translate><!--T:40--> Plan:</translate>
+----
+
+{{PdfDownload|<translate><!--T:18-->
+Time_with_God.pdf</translate>}}
+{{OdtDownload|<translate><!--T:19-->
+Time_with_God.odt</translate>}}
+{{Version|<translate><!--T:20-->
+1.2</translate>}}

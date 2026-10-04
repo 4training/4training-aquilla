@@ -1,0 +1,46 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar>
+<languages />
+
+==== <translate><!--T:1--> Holy Spirit, fill me!</translate> ==== 
+<translate><!--T:23--> Pray for the Holy Spirit to work in you and through you.</translate>
+
+==== <translate><!--T:2--> Jesus, protect me!</translate> ==== 
+<translate><!--T:24--> Put yourself under the protection of Jesus' blood and sacrifice.</translate>
+
+==== <translate><!--T:3--> Heavenly Father, give me whatever gift I need today.</translate> ====
+<translate><!--T:25--> God can give you everything you'll need this day.</translate>
+
+==== <translate><!--T:4--> Thank you, God, for my life and everything you're giving me.</translate> ====
+<translate><!--T:26--> Say thanks in and for everything.</translate>
+
+
+== <translate><!--T:5--> Put on the whole armor of God</translate> == 
+
+* {{Translatable template|Italic|<translate><!--T:6-->
+Helmet of Salvation</translate>:}} <translate><!--T:7-->
+God, protect and change my thoughts.</translate>
+* {{Translatable template|Italic|<translate><!--T:8-->
+Breastplate of Righteousness</translate>:}} <translate><!--T:9-->
+Thank you, God, for your grace by which I'm saved.</translate>
+* {{Translatable template|Italic|<translate><!--T:10-->
+Belt of Truth</translate>:}} <translate><!--T:11-->
+God, help me to speak truth and to live according to your truth.</translate>
+* {{Translatable template|Italic|<translate><!--T:12-->
+Shoes of Readiness</translate>:}} <translate><!--T:13-->
+God, help me to see situations where I can share about you and help me to do it.</translate>
+* {{Translatable template|Italic|<translate><!--T:14-->
+Shield of Faith</translate>:}} <translate><!--T:15-->
+God I trust you. Let my faith in you grow.</translate>
+* {{Translatable template|Italic|<translate><!--T:16-->
+Sword / God's Word</translate>:}} <translate><!--T:17-->
+God, help me to understand your word better and to use it.</translate>
+
+<translate><!--T:18-->
+(Ephesians 6:10-17)</translate>
+
+{{PdfDownload|<translate><!--T:19-->
+A_Daily_Prayer.pdf</translate>}}
+{{OdtDownload|<translate><!--T:20-->
+A_Daily_Prayer.odt</translate>}}
+{{Version|<translate><!--T:21-->
+1.0</translate>}}

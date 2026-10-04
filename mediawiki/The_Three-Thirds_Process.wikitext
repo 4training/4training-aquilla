@@ -1,0 +1,31 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar>
+<languages/>
+<div style="margin-right:25px;float:left">
+{{LinkedImage300px|<translate><!--T:12--> The_Three-Thirds_Process.png</translate>|<translate><!--T:15--> Diagram of the Three-Thirds Process</translate>}}</div>
+
+{{Translatable template|Italic|<translate><!--T:14-->
+For more details on how to use this diagram see [[Training Meeting Outline|Training Meeting Outline]].</translate>}}
+
+# <translate><!--T:1-->
+How are you?</translate>
+# '''<translate><!--T:2-->
+Accountability</translate>'''
+# '''<translate><!--T:3-->
+Vision</translate>'''
+# <translate><!--T:4-->
+Worship</translate>
+# <translate><!--T:5-->
+Lesson</translate>
+# '''<translate><!--T:6-->
+Practice</translate>'''
+# '''<translate><!--T:7-->
+Setting goals</translate>'''
+# '''<translate><!--T:8-->
+Prayer</translate>'''
+
+{{PdfDownload|<translate><!--T:9-->
+The_Three-Thirds_Process.pdf</translate>}}
+{{OdgDownload|<translate><!--T:10-->
+The_Three-Thirds_Process.odg</translate>}}
+{{Version|<translate><!--T:11-->
+1.0</translate>}}

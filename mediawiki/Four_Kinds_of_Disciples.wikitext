@@ -1,0 +1,47 @@
+__NOTOC__<sidebar>sidebar-more</sidebar>
+<languages/>
+{| style="border-collapse:collapse;width:80%;padding:3px"
+|- style="background-color:lime;"
+| style="width:40%;text-align:center;font-weight:bold;font-size:22pt;padding:5px;border:1px solid black" | <translate><!--T:1-->
+Trainers</translate>
+| style="width:40%;text-align:center;font-size:130%;border:1px solid black" | <p><translate><!--T:2-->
+Share the gospel, start new groups and train them to repeat the process</translate></p><p style="font-weight:bold;font-style:italic;"><translate><!--T:3-->
+Kingdom growth by multiplication</translate></p>
+|-
+| colspan="2" style="text-align:center;background-color:black;color:white;padding:5px;font-size:130%;border:1px solid black" | <span style="font-size:15pt;font-weight:bold"><translate><!--T:4-->
+The VISION Barrier</translate></span><br/><translate><!--T:5-->
+inward focus – lack of generational foresight – too much control</translate>
+|- style="background-color:cornflowerblue"
+| style="width:40%;text-align:center;font-weight:bold;font-size:20pt;padding:5px;border:1px solid black" | <translate><!--T:6-->
+Starters</translate>
+| style="width:40%;text-align:center;font-size:130%;border:1px solid black" | <p><translate><!--T:7-->
+Share the gospel, start new groups</translate></p><p style="font-weight:bold;font-style:italic"><translate><!--T:8-->
+Kingdom growth stops at 2nd generation</translate></p>
+|-
+| colspan="2" style="text-align:center;background-color:black;color:white;padding:5px;font-size:130%;border:1px solid black" | <span style="font-size:15pt;font-weight:bold"><translate><!--T:9-->
+The PERMISSION Barrier</translate></span><br/><translate><!--T:10-->
+no permission to start new groups – pass disciple-making off to “specialists”</translate>
+|- style="background-color:orange"
+| style="width:40%;text-align:center;font-weight:bold;font-size:20pt;padding:5px;border:1px solid black" | <translate><!--T:11-->
+Witnesses</translate>
+| style="width:40%;text-align:center;font-size:130%;border:1px solid black" | <p><translate><!--T:12-->
+Share the gospel, take new people to existing groups</translate></p><p style="font-weight:bold;font-style:italic"><translate><!--T:13-->
+Kingdom growth by addition only</translate></p>
+|-
+| colspan="2" style="text-align:center;background-color:black;color:white;padding:5px;font-size:130%;border:1px solid black" | <span style="font-size:15pt;font-weight:bold"><translate><!--T:14-->
+The CONFIDENCE Barrier</translate></span><br/><translate><!--T:15-->
+afraid to witness – make excuses – pass evangelism off to “gifted people”</translate>
+|- style="background-color:red" | 
+| style="width:40%;text-align:center;font-weight:bold;font-size:20pt;padding:5px;border:1px solid black" | <translate><!--T:16-->
+Attenders</translate>
+| style="width:40%;text-align:center;font-size:130%;border:1px solid black" | <p><translate><!--T:17-->
+Don’t share, don’t start groups, don’t train others</translate></p><p style="font-weight:bold;font-style:italic"><translate><!--T:18-->
+No kingdom growth</translate></p>
+|}
+
+{{PdfDownload|<translate><!--T:19-->
+Four_Kinds_of_Disciples.pdf</translate>}}
+{{OdtDownload|<translate><!--T:20-->
+Four_Kinds_of_Disciples.odt</translate>}}
+{{Version|<translate><!--T:21-->
+1.1</translate>}}

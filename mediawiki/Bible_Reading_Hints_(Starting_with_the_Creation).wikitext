@@ -1,0 +1,5 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar><languages/>
+{{Translatable template|BibleReadingHints|books=GMA|questions=HHH}}{{PdfDownload|<translate><!--T:1-->
+Bible_Reading_Hints_(Starting_with_the_Creation).pdf</translate>}}{{PrintPdfDownload|<translate><!--T:5--> Bible_Reading_Hints_(Starting_with_the_Creation)_print.pdf</translate>}}{{OdtDownload|<translate><!--T:2-->
+Bible_Reading_Hints_(Starting_with_the_Creation).odt</translate>}}{{Version|<translate><!--T:4-->
+2.0</translate>}}

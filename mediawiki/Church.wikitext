@@ -1,0 +1,82 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar>
+<languages/>
+== <translate><!--T:44--> Church as a family</translate> ==
+[[File:Family.png|120px|left]]
+<translate><!--T:1--> When we accept God’s offer and are reborn, we become a member of God’s family. Every spiritual child needs a spiritual family. God is our heavenly father, and as followers of Jesus, we are like brothers and sisters. Family means a safe place to grow and to learn who we are as children of God. Family provides care, and we learn how to live in relationships.</translate><br clear="all"/>
+== <translate><!--T:45--> Church as a body</translate> ==
+[[File:Body.png|120px|left]]
+<translate><!--T:46--> We are the body of Jesus – that’s how the New Testament describes the relationship between Jesus and His followers. A body means that everyone is a part and has a special role. Jesus is the head; we need to be connected to Him so that He can coordinate everything and lead us. We’re supposed to work together just like a body does. That way we resemble Jesus and He can work through us.</translate><br clear="all"/>
+== <translate><!--T:47--> Church as a team</translate> ==
+[[File:Team.png|120px|left]]
+<translate><!--T:48--> A team is a group of people who decide to work together for a common vision. They train together and do whatever is necessary to reach the goal. Jesus wants His church to be united for His kingdom. He shows us who we could build a team with and who should train us.</translate><br clear="all"/>
+
+<translate><!--T:6-->
+Therefore it is clear that “church” is not a building, but a group of followers of Jesus. Church can meet anywhere: in parks, schools, cafés, church buildings, offices, at home or online.</translate>
+
+{{Translatable template|Italic|<translate><!--T:49--> What do the three images of church (as a family, as a body, as a team) look like in your life?</translate>}}
+
+== <translate><!--T:7--> Church in the Book of Acts</translate> ==
+<translate><!--T:39--> In the New Testament, the word “church” is used in three different ways:</translate>
+<translate><!--T:40--> # All the followers of Jesus in the world (the global “body of Christ”)</translate>
+<translate><!--T:41--> # All the followers of Jesus in a city / a region<br/>Example: the “church in Jerusalem” (Acts 11:22)</translate>
+<translate><!--T:42--> # A group of followers of Jesus that regularly meet together<br/>Example: the “church in the house of Priscilla and Aquila” (Romans 16:5)</translate>
+
+<translate><!--T:43--> Here we look at the third meaning. What elements make up a specific church?</translate>
+
+{{Translatable template|Italic|<translate><!--T:50--> Read Acts 2:37-47.</translate>}}
+== <translate><!--T:51--> Elements of church</translate> ==
+=== <translate><!--T:52--> Baptism</translate> ===
+<translate><!--T:26-->
+The word “baptism” means “to immerse, submerge” as cleansing or washing. Just as Jesus was baptised, we join with Him by getting baptized ourselves. Jesus commands His followers:<br/>
+“... baptise them in the name of the Father and of the Son and of the Holy Spirit.” (Matthew 28:19)</translate>
+
+<translate><!--T:27--> Read Acts 2:38 again, and see how it explains this and shows the main parts of “re-birth”:</translate><br/>
+<translate><!--T:28--> We repent and bury our old life. In the same way that Jesus was buried and then rose again to life, we go under water in baptism and come out of the water with a new life (Romans 6:1-11). Then in our new family we start a totally new lifestyle guided by the example of Jesus and filled with the Holy Spirit. (See the worksheet “[[Baptism|Baptism]]” for more details).</translate>
+
+=== <translate><!--T:53--> The Lord’s Supper</translate> ===
+<translate><!--T:29-->
+Jesus set the Lord’s Supper so that we remember His death and the shedding of His blood for our sins (Luke 22:15-20). We take time to reflect on what Jesus did for us and to give thanks. When we have it, we should examine our actions and confess our sins (1 Corinthians 11:23-29, see also worksheet “[[Confessing Sins and Repenting|Confessing Sins and Repenting]]”).</translate>
+
+=== <translate><!--T:8--> Covenant</translate> ===
+<translate><!--T:9-->
+A group of people who have been baptised now decides to follow Jesus together. They make a covenant with each other, start to see themselves as a church and commit to doing God’s will together.</translate>
+
+=== <translate><!--T:23--> Leaders</translate> ===
+<translate><!--T:24-->
+Healthy churches have leaders who care about the others and support them to do God’s will in all parts of their lives.</translate>
+
+=== <translate><!--T:54--> Giving</translate> ===
+<translate><!--T:32-->
+Giving thank-you gifts to God is an act of worship. We offer sacrifices to God in many areas of our life, e.g. with our time and our abilities. God has also asked us to give parts of our finances to Him. This is an important way to give into the family of God – His global, regional and local kingdom.</translate>
+
+=== <translate><!--T:11--> Worship</translate> ===
+<translate><!--T:12-->
+We praise God and are in His presence.</translate>
+
+=== <translate><!--T:13--> Fellowship</translate> ===
+<translate><!--T:14-->
+We lovingly care about each other and are ready to sacrifice for each other.</translate>
+
+=== <translate><!--T:15--> Prayer</translate> ===
+<translate><!--T:16-->
+Together we talk with God.</translate>
+
+=== <translate><!--T:17--> Training</translate> ===
+<translate><!--T:18-->
+We read the Bible and teach everyone to obey God in everyday life.</translate>
+
+=== <translate><!--T:21--> Multiplication</translate> ===
+<translate><!--T:22-->
+We share the gospel and make disciples by the power of the Holy Spirit.</translate>
+
+
+----
+{{Translatable template|Italic|<translate><!--T:55--> Take time now as a group and evaluate: Which of these elements do you have in your group?</translate>}}
+
+{{Translatable template|Italic|<translate><!--T:56--> What are your next steps so that you can get closer to God’s ideal of church? (What do you need to add? Where do you need to use your time differently? etc.)</translate>}}
+{{PdfDownload|<translate><!--T:34-->
+Church.pdf</translate>}}
+{{OdtDownload|<translate><!--T:35-->
+Church.odt</translate>}}
+{{Version|<translate><!--T:37-->
+2.0</translate>}}

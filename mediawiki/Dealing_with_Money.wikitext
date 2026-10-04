@@ -1,0 +1,56 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar>
+<languages/>
+<translate><!--T:1--> Whether a lot or very little – everyone has money. The topic is constantly present. We earn money, go shopping, look at prices, and decide if something is worth a certain price for us: every day we need to make decisions about what to do with the money we have.</translate>
+
+<translate><!--T:2--> It’s important to remember: Money is a tool. With the same banknote I can bring blessing or harm. We’re responsible for what we do with our money and possessions – God will hold us accountable for what He has entrusted to us.</translate>
+
+<translate><!--T:3--> Jesus talked very often about money. Back then, as well as today, there is the same question: How can we deal properly with money? In His time there wasn’t much technology and dealing with money was not as convenient as it is now. But the core of it is still the same: Money reveals our motivation. It shows what truly matters to us.</translate>
+	 	 	 	
+== <translate><!--T:4--> Looking at our hearts</translate> ==
+<translate><!--T:5--> We can use the topic of money like a mirror and look for harmful things inside of us:</translate>
+;<translate><!--T:6--> Selfishness</translate>
+:<translate><!--T:7--> We revolve around ourselves. “It’s all mine! I’m not sharing anything!”</translate>
+;<translate><!--T:8--> Envy and greed</translate>
+:<translate><!--T:9--> We’re not satisfied with what we have. We compare ourselves with others and think, “He has something better than I have! I want it as well!”</translate>
+;<translate><!--T:10--> Arrogance</translate>
+:<translate><!--T:11--> “I’m better than others. Look at me!”</translate>
+;<translate><!--T:12--> Worry and fear</translate>
+:<translate><!--T:13--> “I don’t have enough. How will I survive if … ?”</translate>
+
+{{Translatable template|Italic|<translate><!--T:14--> Which of these do you find in your heart? Ask God for forgiveness.</translate>}}
+
+== <translate><!--T:15--> Be fair</translate> ==
+<translate><!--T:16--> With money comes temptation. Whether at work, with neighbors and friends, or when paying taxes to the government: There are ways to deceive others. Some are obviously illegal, others are in a grey zone, and some ways may be legal but still unfair. But Jesus never deceived people and clearly said, “Do to others as you want them to do to you,” (Luke 6:31) and “the worker deserves his wages” (Luke 10:7).</translate>
+
+<translate><!--T:17--> When we deceive another person, the harm to that person is often obvious, so we might be more reluctant to deceive them. However, when it’s a big company or our government, we may have less inhibitions. Still, wrong remains wrong.</translate>
+
+{{Translatable template|Italic|<translate><!--T:18--> God, where have I treated others unfairly? Where have I violated or bypassed laws?</translate>}}
+
+== <translate><!--T:19--> What do I do with my money?</translate> ==
+<translate><!--T:20--> God wants us to deal responsibly with our money and be good stewards of what He entrusts to us. That means:</translate>
+* <translate><!--T:21--> knowing where my finances go (using an account book, budget app, etc.)</translate>
+* <translate><!--T:22--> being diligent and using wisely what He’s entrusting to me</translate>
+* <translate><!--T:23--> not being wasteful</translate>
+* <translate><!--T:24--> asking God what goals I should work for</translate>
+<translate><!--T:25--> It’s important to be careful and wise to not end up in unhealthy dependencies with our finances (see Romans 13:8). There can be good reasons to incur debts: bigger goals such as starting a company or building a house may only be possible that way. But there are also many bad reasons to incur debts. For example: I compare myself with others and I really want a more amazing holiday or the newest thing from the adverts which I actually can’t afford.</translate>
+
+{{Translatable template|Italic|<translate><!--T:26--> God, what goals do you want me to work and save money for?</translate>}}
+{{Translatable template|Italic|<translate><!--T:27--> God, where do I waste money?</translate>}}
+
+== <translate><!--T:28--> Receiving and giving</translate> ==
+<translate><!--T:29--> God says that He is a good father who cares for us. We may doubt this, but the reality is that He cares better for us than we could. Everything that we have we received from God, so there are many reasons to be thankful to Him.</translate>
+
+<translate><!--T:30--> We all started our lives as little babies who were only receiving. God wants us to grow up and learn to take responsibility for our own lives and for others. This means sharing what we have been given and investing in what God wants. Just as God loves to give, He wants us to love giving and being generous as well!</translate>
+
+{{Translatable template|Italic|<translate><!--T:31--> Talk with your friends and your trainer about how you can invest into God’s Kingdom.</translate>}}
+
+== <translate><!--T:32--> My goals</translate> ==
+{{Translatable template|Italic|<translate><!--T:33--> God, which of these topics do you want to talk with me specifically about?</translate>}}
+
+<translate><!--T:34--> Set goals on how you will put into practice what God showed you today. Ask a good trainer for support in that. Look for someone who is transparent, wise and not just selling products.</translate>
+
+<translate><!--T:35--> The biggest hindrances in learning to deal with money in a good way are often to be found in our hearts. To become free, go through the worksheets “[[Confessing Sins and Repenting|Confessing Sins and Repenting]]” and “[[Getting Rid of Colored Lenses|Getting Rid of Colored Lenses]]” together with a helper. (Start with the question: <i>“God, through which glasses do I see money?”</i>)</translate>
+
+{{PdfDownload|<translate><!--T:36--> Dealing_with_Money.pdf</translate>}}
+{{OdtDownload|<translate><!--T:37--> Dealing_with_Money.odt</translate>}}
+{{Version|<translate><!--T:38--> 1.0</translate>}}

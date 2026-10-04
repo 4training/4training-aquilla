@@ -1,0 +1,22 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar>
+<languages/>
+<translate>
+<!--T:1-->
+God gave us His word so that we can know who He is and what He wants. We read it to understand Him better and to do what He says. These principles are the same everywhere. The question is: Where to start reading? Depending on your situation and background we provide different suggestions. In these versions the main structure of the bookmark is the same, only the suggested reading is different. Below you find the "standard" version that suggests to start reading with Luke and Acts.
+</translate>
+
+<translate>
+=== [[Bible Reading Hints (Seven Stories full of Hope)|Bible Reading Hints (Seven Stories full of Hope)]] === <!--T:2-->
+* Includes a selection of seven stories from the New Testament
+* Good for people with a "modern Western" background.
+</translate>
+
+<translate>
+=== [[Bible Reading Hints (Starting with the Creation)|Bible Reading Hints (Starting with the Creation)]] === <!--T:3-->
+* Suggests to start reading with Genesis, Matthew and Acts
+* Good for people from e.g. Muslim societies.
+</translate>
+{{Translatable template|BibleReadingHints|books=LA|questions=HHH}}{{PdfDownload|<translate><!--T:4-->
+Bible_Reading_Hints.pdf</translate>}}{{PrintPdfDownload|<translate><!--T:8--> Bible_Reading_Hints_print.pdf</translate>}}{{OdtDownload|<translate><!--T:5-->
+Bible_Reading_Hints.odt</translate>}}{{Version|<translate><!--T:7-->
+2.0</translate>}}

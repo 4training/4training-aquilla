@@ -1,0 +1,38 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar>
+<languages />
+<translate><!--T:1--> In Acts 9:1-18, we read how God changes the life of Paul so that he starts to follow Jesus. In chapter 22:1-21, Paul tells this story in front of a big crowd and in chapter 26:1-23 he is testifying about his story in court in front of the king. We can assume that Paul always told people his story everywhere he went.</translate>
+
+<translate><!--T:2--> In the same way, each one of us has our own story with God: the reality of what we experienced with God and how He changed us. It is a part of our life, and no one can deny it. And just like Paul, we can share our story with God whenever there is an opportunity to do so. Our personal stories can:</translate>
+* <translate><!--T:3--> Show how great God is;</translate>
+* <translate><!--T:4--> Make people interested in hearing more about God;</translate>
+* <translate><!--T:5--> Help us to find spiritually interested people.</translate>
+<translate><!--T:6--> Thus, your story can serve as a bridge to sharing God’s story.</translate>
+== <translate><!--T:7--> Outline</translate> ==
+<translate><!--T:8--> # Before...</translate><br/><translate><!--T:9--> What did my life look like before?</translate>
+<translate><!--T:10--> #The turning point</translate><br/><translate><!--T:11--> What did I hear, and what happened? Why did it touch me? How did I make the decision to follow Jesus?</translate>
+<translate><!--T:12--> #After...</translate><br/><translate><!--T:13--> How did God change me in comparison to before? What do I expect from my new life?</translate>
+
+== <translate><!--T:14--> Important:</translate> ==
+* <translate><!--T:15--> Keep it short and simple (300 words / 3 minutes max; 1-2 minutes is even better): Decide what you want to concentrate on and which details to keep or leave out.</translate>
+* <translate><!--T:16--> Speak understandably: Avoid religious vocabulary and ask yourself: Does the other person understand what I want to say?</translate>
+
+{{Translatable template|Italic|<translate><!--T:17--> Practice: Think about how you can share your story so that it is consistent and flows well, so that others can understand it. Write down your story and then practice telling it with others.</translate>}}
+
+== <translate><!--T:18--> Using my story</translate> ==
+<translate><!--T:19--> The following three areas are key for fruitful conversations with others:</translate>
+=== <translate><!--T:20--> Their story</translate> ===
+<translate><!--T:21--> No matter if you talk to a stranger or a friend: Listen! Ask questions about their family, their life, their struggles, their passions, and about their experiences with God. Try to find out where God is at work in their lives.</translate>
+
+=== <translate><!--T:22--> My story</translate> ===
+<translate><!--T:23--> Be ready to share how God has changed your life in normal conversations.</translate>
+
+=== <translate><!--T:24--> God’s story</translate> ===
+<translate><!--T:25--> The most important thing for them is what God is offering them. Explain more (see worksheet “[[God's Story|God’s Story]]”) and observe how they receive it.</translate>
+
+== <translate><!--T:26--> My goals</translate> ==
+<translate><!--T:27--> I want to share my story with these people:</translate><br/><br/>
+----
+
+{{PdfDownload|<translate><!--T:28--> My_Story_with_God.pdf</translate>}}
+{{OdtDownload|<translate><!--T:29--> My_Story_with_God.odt</translate>}}
+{{Version|<translate><!--T:31--> 1.1</translate>}}

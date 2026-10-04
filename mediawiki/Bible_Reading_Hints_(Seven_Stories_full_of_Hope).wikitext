@@ -1,0 +1,21 @@
+__NOTOC__<sidebar>sidebar-essentials</sidebar><languages/>
+{{Translatable template|BibleReadingHints|books=LA|questions=HJHH}}
+=== <translate><!--T:1--> Seven Stories full of Hope</translate> ===
+<translate><!--T:7--> 1. Luke 7:36-50</translate><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<translate><!--T:8--> Jesus and the prostitute</translate><br/>
+<translate><!--T:9--> 2. John 4:4-30</translate><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<translate><!--T:10--> Jesus and the woman at the well</translate><br/>
+<translate><!--T:11--> 3. Luke 18:9-17</translate><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<translate><!--T:12--> Who can come to God?</translate><br/>
+<translate><!--T:13--> 4. Luke 18:18-30 + 19:1-10</translate><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<translate><!--T:14--> The cost of following Jesus</translate><br/>
+<translate><!--T:15--> 5. Matthew 25:31-46</translate><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<translate><!--T:16--> Justice in the end</translate><br/>
+<translate><!--T:17--> 6. Mark 15:1-47</translate><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<translate><!--T:18--> Jesus at the cross</translate><br/>
+<translate><!--T:19--> 7. Luke 24:13-35</translate><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<translate><!--T:20--> Jesus on the way with two disciples</translate>
+{{PdfDownload|<translate><!--T:2-->
+Bible_Reading_Hints_(Seven_Stories_full_of_Hope).pdf</translate>}}{{PrintPdfDownload|<translate><!--T:6--> Bible_Reading_Hints_(Seven_Stories_full_of_Hope)_print.pdf</translate>}}{{OdtDownload|<translate><!--T:3-->
+Bible_Reading_Hints_(Seven_Stories_full_of_Hope).odt</translate>}}{{Version|<translate><!--T:5-->
+2.0</translate>}}

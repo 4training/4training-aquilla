@@ -11,8 +11,10 @@ CSV format (Aquilla bilingual importer):
   Worksheet_Name/Page_display_title,English Title,Translated Title
   Worksheet_Name/1,"<i>…</i>",…
 
-With --languages de,es: live-fetch translations from 4training.net and write
-one CSV per language under aquilla/{lang}/.
+CSV output live-fetches translations from 4training.net and writes
+one CSV per language under aquilla/{lang}/, only for worksheets resourcesbot
+counts as a translation in that language. The default language list is
+LANGUAGE_LIST; pass --languages de,es to limit a run to that subset.
 """
 
 from __future__ import annotations
@@ -37,6 +39,18 @@ DEFAULT_API_URL = "https://www.4training.net/api.php"
 
 INLINE_KEEP = ("i", "b", "strong", "em", "u", "s", "br", "p", "code")
 PAGE_DISPLAY_TITLE_KEY = "Page_display_title"
+
+# Snapshot of languages with at least one listed worksheet
+# (resourcesbot show_in_list: PDF + same major version as English).
+# Omitted: en (source), tr-tanri, ku-sinj, uz-cyrl,
+# and languages with nothing listed.
+LANGUAGE_LIST = [
+    "af", "ar", "az", "bg", "ckb", "cs", "de", "es", "fa", "fr",
+    "ha", "hi", "hu", "id", "it", "kn", "ko", "ku", "ky", "lg",
+    "ml", "ms", "nb", "nl", "pl", "pt-br", "rn", "ro", "ru", "sk",
+    "sq", "sr", "ss", "sv", "sw", "ta", "te", "th", "ti", "tr",
+    "uz", "vi", "xh", "zh",
+]
 
 # Captures T:N and body.
 TRANSLATE_UNIT = re.compile(
@@ -257,6 +271,49 @@ def fetch_page_display_title(api_url: str, page: str, language: str = "en") -> O
         return None
 
 
+def language_json_url(api_url: str, language: str) -> str:
+    """Raw URL of the LanguageInfo page resourcesbot writes for one language."""
+    base = api_url.rsplit("/", 1)[0]
+    title = urllib.parse.quote(f"4training:{language}.json", safe="")
+    return f"{base}/index.php?title={title}&action=raw"
+
+
+def fetch_counted_worksheets(api_url: str, language: str) -> set[str]:
+    """English page names resourcesbot counts as a translation in this language.
+
+    A worksheet is included in 4training:{language}.json when messagegroupstats
+    reports at least one translated unit and both the page display title and the
+    version are translated. Unfinished translations are included; worksheets
+    that fail the title or version check are not.
+    """
+    url = language_json_url(api_url, language)
+    req = urllib.request.Request(url, headers={"User-Agent": "4training-aquilla/1.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        return {
+            str(worksheet["page"])
+            for worksheet in data.get("worksheets") or []
+            if worksheet.get("page")
+        }
+    except (KeyError, urllib.error.URLError, TimeoutError, json.JSONDecodeError) as err:
+        print(
+            f"  warning: could not load counted translations for {language}: {err}",
+            file=sys.stderr,
+        )
+        return set()
+
+
+def load_counted_worksheets(api_url: str, languages: list[str]) -> dict[str, set[str]]:
+    """Map each language code to the worksheets resourcesbot counts for it."""
+    counted: dict[str, set[str]] = {}
+    for language in languages:
+        print(f"loading counted translations for {language}…")
+        counted[language] = fetch_counted_worksheets(api_url, language)
+        print(f"  {language}: {len(counted[language])} worksheets")
+    return counted
+
+
 def fetch_translations(api_url: str, page: str, language: str) -> dict[str, str]:
     """
     Map unit suffix → translation text.
@@ -367,6 +424,7 @@ def process_file(
     fmt: str,
     api_url: str,
     languages: list[str],
+    counted_worksheets: Optional[dict[str, set[str]]] = None,
 ) -> None:
     raw = src.read_text(encoding="utf-8")
     units = extract_units(raw)
@@ -386,7 +444,11 @@ def process_file(
 
     if fmt in ("csv", "both"):
         if languages:
+            counted_worksheets = counted_worksheets or {}
             for lang in languages:
+                if stem not in counted_worksheets.get(lang, set()):
+                    print(f"  skip {stem}/{lang} (not counted as a translation)")
+                    continue
                 print(f"  fetching translations {stem}/{lang}…")
                 targets = fetch_translations(api_url, stem, lang)
                 lang_dir = output_dir / lang
@@ -448,8 +510,11 @@ def main() -> int:
         "-l",
         "--languages",
         type=parse_languages,
-        default=[],
-        help="Comma-separated language codes; write aquilla/{lang}/*.csv with live-fetched targets",
+        default=LANGUAGE_LIST,
+        help=(
+            "Comma-separated language codes; write aquilla/{lang}/*.csv "
+            "with live-fetched targets (default: LANGUAGE_LIST)"
+        ),
     )
     parser.add_argument(
         "--api-url",
@@ -463,12 +528,23 @@ def main() -> int:
         print(f"No .wikitext files found in {args.input_dir}", file=sys.stderr)
         return 1
 
+    counted_worksheets: dict[str, set[str]] = {}
+    if args.languages and args.format in ("csv", "both"):
+        counted_worksheets = load_counted_worksheets(args.api_url, args.languages)
+
     for src in sources:
         src = src if src.is_absolute() else Path.cwd() / src
         if not src.exists():
             print(f"missing: {src}", file=sys.stderr)
             return 1
-        process_file(src, args.output_dir, args.format, args.api_url, args.languages)
+        process_file(
+            src,
+            args.output_dir,
+            args.format,
+            args.api_url,
+            args.languages,
+            counted_worksheets,
+        )
 
     return 0
 
